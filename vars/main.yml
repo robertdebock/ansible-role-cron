@@ -1,0 +1,18 @@
+---
+# vars file for cron
+_cron_packages:
+  default:
+    - cronie
+  Debian:
+    - cron
+  Ubuntu:
+    - cron
+
+cron_packages: "{{ _cron_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_cron_packages[ansible_distribution] | default(_cron_packages['default'])) }}"
+
+_cron_service:
+  default: crond
+  Debian: cron
+  Ubuntu: cron
+
+cron_service: "{{ _cron_service[ansible_distribution] | default(_cron_service['default']) }}"

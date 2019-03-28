@@ -1,0 +1,29 @@
+---
+# tasks file for cron
+- name: install cron
+  package:
+    name: "{{ cron_packages }}"
+    state: present
+  register: cron_install_cron
+  until: cron_install_cron is succeeded
+  retries: 3
+
+- name: start and enable cron
+  service:
+    name: "{{ cron_service }}"
+    state: started
+    enabled: yes
+  when:
+    - ansible_virtualization_type != "docker"
+
+- name: schedule requested cron jobs
+  cron:
+    name: "{{ item.name }}"
+    minute: "{{ item.minute | default(omit) }}"
+    hour: "{{ item.hour | default(omit) }}"
+    weekday: "{{ item.weekday | default(omit) }}"
+    job: "{{ item.job }}"
+  with_items:
+    - "{{ cron_jobs }}"
+  when:
+    - cron_jobs is defined
