@@ -3,6 +3,7 @@
 _cron_packages:
   default:
     - cronie
+  Alpine: []
   Debian:
     - cron
   Ubuntu:
