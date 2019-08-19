@@ -27,18 +27,9 @@ This example is taken from `molecule/resources/playbook.yml`:
       - name: requested job by the hour
         hour: "23"
         job: "ls -alh > /dev/null"
-      - name: requested job by the day
-        day: "23"
-        job: "ls -alh > /dev/null"
-      - name: requested job by the month
-        month: "1,4,7,10"
-        job: "ls -alh > /dev/null"
       - name: requested job byt the weekday
         weekday: "1"
         job: "ls -alh > /dev/null"
-      - name: unrequested job
-        job: "ls -alh > /dev/null"
-        state: absent
 
   roles:
     - robertdebock.cron
