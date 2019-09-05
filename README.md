@@ -27,7 +27,7 @@ This example is taken from `molecule/resources/playbook.yml`:
       - name: requested job by the hour
         hour: "23"
         job: "ls -alh > /dev/null"
-      - name: requested job byt the weekday
+      - name: requested job by the weekday
         weekday: "1"
         job: "ls -alh > /dev/null"
 
@@ -103,6 +103,9 @@ This role has been tested against the following distributions and Ansible versio
 |ubuntu-rolling|yes|yes|yes*|
 
 A single star means the build may fail, it's marked as an experimental build.
+
+
+
 
 Testing
 -------
