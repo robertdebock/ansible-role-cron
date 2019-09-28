@@ -7,7 +7,7 @@ _cron_packages:
   Debian:
     - cron
 
-cron_packages: "{{ _cron_packages[ansible_os_family | default(_cron_packages['default']) }}"
+cron_packages: "{{ _cron_packages[ansible_os_family] | default(_cron_packages['default']) }}"
 
 _cron_service:
   default: crond
