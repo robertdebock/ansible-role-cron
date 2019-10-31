@@ -13,8 +13,6 @@
     name: "{{ cron_service }}"
     state: started
     enabled: yes
-  when:
-    - ansible_virtualization_type != "docker"
 
 - name: schedule requested cron jobs
   cron:
