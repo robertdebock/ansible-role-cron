@@ -17,20 +17,6 @@ This example is taken from `molecule/resources/playbook.yml`:
   become: yes
   gather_facts: yes
 
-  vars:
-    cron_jobs:
-      - name: requested job
-        job: "ls -alh > /dev/null"
-      - name: requested job by the minute
-        minute: "23"
-        job: "ls -alh > /dev/null"
-      - name: requested job by the hour
-        hour: "23"
-        job: "ls -alh > /dev/null"
-      - name: requested job by the weekday
-        weekday: "1"
-        job: "ls -alh > /dev/null"
-
   roles:
     - robertdebock.cron
 ```

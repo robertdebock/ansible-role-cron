@@ -12,7 +12,7 @@ cron_packages: "{{ _cron_packages[ansible_os_family] | default(_cron_packages['d
 
 _cron_service:
   default: crond
-  Alpine: dcron
+  Alpine: '[]'
   Debian: cron
   Suse: cron
 

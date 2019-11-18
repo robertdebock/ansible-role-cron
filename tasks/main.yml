@@ -13,6 +13,8 @@
     name: "{{ cron_service }}"
     state: started
     enabled: yes
+  when:
+    - cron_service | length
 
 - name: schedule requested cron jobs
   cron:
