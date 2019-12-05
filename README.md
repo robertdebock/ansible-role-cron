@@ -42,7 +42,7 @@ After running this role, this playbook runs to verify that everything works, thi
   gather_facts: yes
 
   roles:
-    - role: robertdebock.cron
+    - role: {{ galaxy_namespace }}.cron
       cron_jobs:
         - name: requested job
           job: "ls -alh > /dev/null"
@@ -117,7 +117,6 @@ This role has been tested on these Ansible versions:
 - ansible>=2.8, <2.9
 - ansible>=2.9
 - git+https://github.com/ansible/ansible.git@devel
-
 
 
 
