@@ -39,6 +39,6 @@ galaxy_info:
     - cron
     - archlinux
     - centos
-    - rhel
+    - redhat
 
 dependencies: []
