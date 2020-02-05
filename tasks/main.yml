@@ -26,8 +26,7 @@
     weekday: "{{ item.weekday | default(omit) }}"
     job: "{{ item.job }}"
     state: "{{ item.state | default('present') }}"
-  with_items:
-    - "{{ cron_jobs }}"
+  loop: "{{ cron_jobs }}"
   notify:
     - restart cron
   when:
