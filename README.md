@@ -11,7 +11,7 @@ Install cron and scedule jobs on your system.
 This example is taken from `molecule/resources/converge.yml` and is tested on each push, pull request and release.
 ```yaml
 ---
-- name: Converge
+- name: converge
   hosts: all
   become: yes
   gather_facts: yes
@@ -23,7 +23,7 @@ This example is taken from `molecule/resources/converge.yml` and is tested on ea
 The machine may need to be prepared using `molecule/resources/prepare.yml`:
 ```yaml
 ---
-- name: Converge
+- name: prepare
   hosts: all
   become: yes
   gather_facts: no
