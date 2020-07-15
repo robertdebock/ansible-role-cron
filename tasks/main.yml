@@ -1,5 +1,8 @@
 ---
 # tasks file for cron
+- name: include assert.yml
+  include_tasks: assert.yml
+
 - name: install cron
   package:
     name: "{{ cron_packages }}"

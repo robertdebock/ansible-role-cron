@@ -57,7 +57,7 @@ For verification `molecule/resources/verify.yml` run after the role has been app
         - name: requested job by specific user
           hour: "23"
           job: "ls -alh > /dev/null"
-          user: "appuser"
+          user: "root"
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.

@@ -1,0 +1,59 @@
+---
+- name: test if cron_jobs is set correctly
+  assert:
+    that:
+      - cron_jobs | length > 0
+      - cron_jobs is iterable
+  when:
+    - cron_jobs is defined
+
+- name: test if item in cron_jobs is set correctly
+  assert:
+    that:
+      - item.name is defined
+      - item.name | length > 0
+      - item.job is defined
+      - item.job | length > 0
+  loop: "{{ cron_jobs }}"
+  when:
+    - cron_jobs is defined
+
+- name: test if item.minute is set correctly
+  assert:
+    that:
+      - item.minute | int
+      - item.minute | int >= 0
+      - item.minute | int <= 59
+  loop: "{{ cron_jobs }}"
+  when:
+    - cron_jobs is defined
+    - item.minute is defined
+
+- name: test if item.hour is set correctly
+  assert:
+    that:
+      - item.hour | int
+      - item.hour | int >= 0
+      - item.hour | int <= 23
+  loop: "{{ cron_jobs }}"
+  when:
+    - cron_jobs is defined
+    - item.hour is defined
+
+- name: test if item.weekday is set correctly
+  assert:
+    that:
+      - item.weekday | int
+      - item.weekday | int >= 0
+      - item.weekday | int <= 7
+  loop: "{{ cron_jobs }}"
+  when:
+    - cron_jobs is defined
+    - item.weekday is defined
+
+- name: test if item.user is set correctly
+  assert:
+    that:
+      - item.user | length > 0
+  when:
+    - item.user is defined
