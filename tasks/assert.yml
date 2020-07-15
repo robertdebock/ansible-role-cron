@@ -3,7 +3,8 @@
   assert:
     that:
       - cron_jobs | length > 0
-      - cron_jobs is iterable
+      - cron_jobs is iterable 
+    quiet: yes
   when:
     - cron_jobs is defined
 
@@ -14,7 +15,10 @@
       - item.name | length > 0
       - item.job is defined
       - item.job | length > 0
+    quiet: yes
   loop: "{{ cron_jobs }}"
+  loop_control:
+    label: "{{ item.name }}"
   when:
     - cron_jobs is defined
 
@@ -24,7 +28,10 @@
       - item.minute | int
       - item.minute | int >= 0
       - item.minute | int <= 59
+    quiet: yes
   loop: "{{ cron_jobs }}"
+  loop_control:
+    label: "{{ item.name }}"
   when:
     - cron_jobs is defined
     - item.minute is defined
@@ -35,7 +42,10 @@
       - item.hour | int
       - item.hour | int >= 0
       - item.hour | int <= 23
+    quiet: yes
   loop: "{{ cron_jobs }}"
+  loop_control:
+    label: "{{ item.name }}"
   when:
     - cron_jobs is defined
     - item.hour is defined
@@ -46,7 +56,10 @@
       - item.weekday | int
       - item.weekday | int >= 0
       - item.weekday | int <= 7
+    quiet: yes
   loop: "{{ cron_jobs }}"
+  loop_control:
+    label: "{{ item.name }}"
   when:
     - cron_jobs is defined
     - item.weekday is defined
@@ -55,5 +68,9 @@
   assert:
     that:
       - item.user | length > 0
+    quiet: yes
+  loop: "{{ cron_jobs }}"
+  loop_control:
+    label: "{{ item.name }}"
   when:
     - item.user is defined
