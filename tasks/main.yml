@@ -7,9 +7,6 @@
   package:
     name: "{{ cron_packages }}"
     state: present
-  register: cron_install_cron
-  until: cron_install_cron is succeeded
-  retries: 3
 
 - name: start and enable cron
   service:
