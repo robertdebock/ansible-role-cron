@@ -22,3 +22,6 @@
           hour: "23"
           job: "ls -alh > /dev/null"
           user: "root"
+        - name: requested job every 5 minutes
+          minute: "/5"
+          job" ls -alh > /dev/null"
