@@ -28,6 +28,8 @@
     state: "{{ item.state | default('present') }}"
     user: "{{ item.user | default(omit) }}"
   loop: "{{ cron_jobs }}"
+  loop_control:
+    label: "{{ item.name }}"
   notify:
     - restart cron
   when:
