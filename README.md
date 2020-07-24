@@ -59,7 +59,7 @@ For verification `molecule/resources/verify.yml` run after the role has been app
           job: "ls -alh > /dev/null"
           user: "root"
         - name: requested job every 5 minutes
-          minute: "/5"
+          minute: "*/5"
           job: "ls -alh > /dev/null"
 ```
 
