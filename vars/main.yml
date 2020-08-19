@@ -16,5 +16,6 @@ _cron_service:
   Alpine: '[]'
   Debian: cron
   Suse: cron
+  Archlinux: cronie
 
 cron_service: "{{ _cron_service[ansible_os_family] | default(_cron_service['default']) }}"
