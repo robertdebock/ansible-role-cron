@@ -3,7 +3,7 @@
   assert:
     that:
       - cron_jobs | length > 0
-      - cron_jobs is iterable 
+      - cron_jobs is iterable
     quiet: yes
   when:
     - cron_jobs is defined
