@@ -65,6 +65,22 @@ For verification `molecule/resources/verify.yml` runs after the role has been ap
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
 
+## [Role Variables](#role-variables)
+
+These variables are set in `defaults/main.yml`:
+```yaml
+---
+# defaults file for cron
+
+# The shell to use for running cronjobs.
+cron_shell: /bin/bash
+
+# The path to set for running jobs.
+cron_path: /sbin:/bin:/usr/sbin:/usr/bin
+
+# The address where mails should be sent to.
+cron_mailto: root
+```
 
 ## [Requirements](#requirements)
 

@@ -9,6 +9,30 @@
     name: "{{ cron_packages }}"
     state: present
 
+- name: configure shell
+  lineinfile:
+    path: /etc/crontab
+    line: "SHELL={{ cron_shell }}"
+    regexp: "^SHELL"
+  notify:
+    - restart cron
+
+- name: configure path
+  lineinfile:
+    path: /etc/crontab
+    line: "PATH={{ cron_path }}"
+    regexp: "^PATH"
+  notify:
+    - restart cron
+
+- name: configure mailto
+  lineinfile:
+    path: /etc/crontab
+    line: "MAILTO={{ cron_mailto }}"
+    regexp: "^MAILTO"
+  notify:
+    - restart cron
+
 - name: start and enable cron
   service:
     name: "{{ cron_service }}"
