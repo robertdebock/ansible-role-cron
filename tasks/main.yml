@@ -11,25 +11,28 @@
 
 - name: configure shell
   lineinfile:
-    path: /etc/crontab
+    path: "{{ cron_configuration }}"
     line: "SHELL={{ cron_shell }}"
     regexp: "^SHELL"
+    create: yes
   notify:
     - restart cron
 
 - name: configure path
   lineinfile:
-    path: /etc/crontab
+    path: "{{ cron_configuration }}"
     line: "PATH={{ cron_path }}"
     regexp: "^PATH"
+    create: yes
   notify:
     - restart cron
 
 - name: configure mailto
   lineinfile:
-    path: /etc/crontab
+    path: "{{ cron_configuration }}"
     line: "MAILTO={{ cron_mailto }}"
     regexp: "^MAILTO"
+    create: yes
   notify:
     - restart cron
 
