@@ -40,7 +40,7 @@ galaxy_info:
 
   galaxy_tags:
     - cron
-    - centos
-    - redhat
+    - crontab
+    - scheduling
 
 dependencies: []
