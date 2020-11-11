@@ -55,7 +55,7 @@
   when:
     - cron_jobs is defined
     - item.minute is defined
-    - item.minute | int
+    - item.minute is number
 
 - name: test if item.hour is set correctly
   assert:
@@ -69,12 +69,11 @@
   when:
     - cron_jobs is defined
     - item.hour is defined
-    - item.hour | int
+    - item.hour is number
 
 - name: test if item.weekday is set correctly
   assert:
     that:
-      - item.weekday | int
       - item.weekday | int >= 0
       - item.weekday | int <= 6
     quiet: yes
@@ -84,6 +83,7 @@
   when:
     - cron_jobs is defined
     - item.weekday is defined
+    - item.weekday is number
 
 - name: test if item.user is set correctly
   assert:
