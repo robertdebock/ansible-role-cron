@@ -3,27 +3,23 @@
   assert:
     that:
       - cron_shell is defined
-      - cron_shell | length > 0
     quiet: yes
 
 - name: test if cron_path is set correctly
   assert:
     that:
       - cron_path is defined
-      - cron_path | length > 0
     quiet: yes
 
 - name: test if cron_mailto is set correctly
   assert:
     that:
       - cron_mailto is defined
-      - cron_mailto | length > 0
     quiet: yes
 
 - name: test if cron_jobs is set correctly
   assert:
     that:
-      - cron_jobs | length > 0
       - cron_jobs is iterable
     quiet: yes
   when:
@@ -33,9 +29,7 @@
   assert:
     that:
       - item.name is defined
-      - item.name | length > 0
       - item.job is defined
-      - item.job | length > 0
     quiet: yes
   loop: "{{ cron_jobs }}"
   loop_control:
@@ -88,7 +82,6 @@
 - name: test if item.user is set correctly
   assert:
     that:
-      - item.user | length > 0
     quiet: yes
   loop: "{{ cron_jobs }}"
   loop_control:
