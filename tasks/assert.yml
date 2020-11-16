@@ -40,8 +40,8 @@
 - name: test if item.minute is set correctly
   assert:
     that:
-      - item.minute | int >= 0
-      - item.minute | int <= 59
+      - item.minute >= 0
+      - item.minute <= 59
     quiet: yes
   loop: "{{ cron_jobs }}"
   loop_control:
@@ -54,8 +54,8 @@
 - name: test if item.hour is set correctly
   assert:
     that:
-      - item.hour | int >= 0
-      - item.hour | int <= 23
+      - item.hour >= 0
+      - item.hour <= 23
     quiet: yes
   loop: "{{ cron_jobs }}"
   loop_control:
@@ -68,8 +68,8 @@
 - name: test if item.weekday is set correctly
   assert:
     that:
-      - item.weekday | int >= 0
-      - item.weekday | int <= 6
+      - item.weekday >= 0
+      - item.weekday <= 6
     quiet: yes
   loop: "{{ cron_jobs }}"
   loop_control:
