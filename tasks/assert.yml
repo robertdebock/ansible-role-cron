@@ -1,4 +1,5 @@
 ---
+
 - name: test if cron_shell is set correctly
   assert:
     that:
