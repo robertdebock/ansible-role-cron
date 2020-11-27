@@ -4,18 +4,21 @@
   assert:
     that:
       - cron_shell is defined
+      - cron_shell is string
     quiet: yes
 
 - name: test if cron_path is set correctly
   assert:
     that:
       - cron_path is defined
+      - cron_path is string
     quiet: yes
 
 - name: test if cron_mailto is set correctly
   assert:
     that:
       - cron_mailto is defined
+      - cron_mailto is string
     quiet: yes
 
 - name: test if cron_jobs is set correctly
@@ -30,7 +33,9 @@
   assert:
     that:
       - item.name is defined
+      - item.name is string
       - item.job is defined
+      - item.job is string
     quiet: yes
   loop: "{{ cron_jobs }}"
   loop_control:
