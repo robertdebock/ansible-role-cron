@@ -1,28 +1,20 @@
 ---
-image: docker:stable-dind
-
-variables:
-  DOCKER_DRIVER: overlay2
-  DOCKER_HOST: tcp://localhost:2375
-  DOCKER_TLS_CERTDIR: ""
+image: quay.io/ansible/molecule:latest
 
 services:
   - docker:dind
 
 before_script:
-  - apk add --no-cache
-    gcc
-    libffi-dev
-    make
-    musl-dev
-    openssl-dev
-    py3-pip
-    python3
-    python3-dev
-  - pip install --ignore-installed distlib
-    tox
+  - docker -v
+  - python -V
+  - ansible --version
+  - molecule --version
 
 molecule:
-  stage: test
+  tags:
+    - docker
+  variables:
+    DOCKER_HOST: "tcp://docker:2375"
+    PY_COLORS: 1
   script:
-    - tox -epy{38}-ansible
+    - molecule test
