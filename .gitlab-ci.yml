@@ -10,4 +10,11 @@ variables:
 
 molecule:
   script:
-    - molecule test
+    # - molecule test
+    - image=${IMAGE} tag=${TAG} molecule test
+  parallel:
+    matrix:
+      - IMAGE: fedora
+        TAG: 32
+      - IMAGE: fedora
+        TAG: latest
