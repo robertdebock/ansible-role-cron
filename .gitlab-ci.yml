@@ -1,0 +1,27 @@
+---
+image: python:3.9
+
+stages:
+  - lint
+  - test
+
+yamllint:
+  stage: lint
+  before_script:
+    - pip install yamllint
+  script:
+    - yamllint .
+
+ansible-lint:
+  stage: lint
+  before_script:
+    - pip install ansible-lint
+  script:
+    - ansible-lint
+
+tox:
+  stage: test
+  before_script:
+    - pip install tox
+  script:
+    - tox
