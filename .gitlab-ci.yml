@@ -4,6 +4,9 @@ image: docker:stable-dind
 services:
   - docker:dind
 
+variables:
+  DOCKER_TLS_CERTDIR: ""
+
 before_script:
   - apk add --no-cache
     gcc
