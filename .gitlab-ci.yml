@@ -20,4 +20,4 @@ before_script:
 molecule:
   stage: test
   script:
-    - tox
+    - tox -epy{38}-ansible
