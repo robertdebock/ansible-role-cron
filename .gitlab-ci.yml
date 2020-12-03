@@ -1,5 +1,5 @@
 ---
-image: quay.io/ansible/molecule:3.2.0a0
+image: robertdebock/github-action-molecule:2.6.6
 
 services:
   - docker:dind
