@@ -6,12 +6,7 @@ services:
 
 variables:
   DOCKER_HOST: "tcp://docker:2375"
-
-# before_script:
-#   - docker -v
-#   - python -V
-#   - ansible --version
-#   - molecule --version
+  PY_COLORS: 1
 
 molecule:
   script:
