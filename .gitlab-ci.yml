@@ -4,17 +4,15 @@ image: robertdebock/github-action-molecule:2.6.6
 services:
   - docker:dind
 
-before_script:
-  - docker -v
-  - python -V
-  - ansible --version
-  - molecule --version
+variables:
+  DOCKER_HOST: "tcp://docker:2375"
+
+# before_script:
+#   - docker -v
+#   - python -V
+#   - ansible --version
+#   - molecule --version
 
 molecule:
-  tags:
-    - docker
-  variables:
-    DOCKER_HOST: "tcp://docker:2375"
-    PY_COLORS: 1
   script:
     - molecule test
