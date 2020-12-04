@@ -142,5 +142,3 @@ I'd like to thank everybody that made contributions to this repository. It motiv
 [Robert de Bock](https://robertdebock.nl/)
 
 Please consider [sponsoring me](https://github.com/sponsors/robertdebock).
-
-This line if left intentionally.
