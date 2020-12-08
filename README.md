@@ -2,9 +2,9 @@
 
 Install cron and scedule jobs on your system.
 
-|Travis|GitHub|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-cron.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-cron)|[![github](https://github.com/robertdebock/ansible-role-cron/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-cron/actions)|[![quality](https://img.shields.io/ansible/quality/39153)](https://galaxy.ansible.com/robertdebock/cron)|[![downloads](https://img.shields.io/ansible/role/d/39153)](https://galaxy.ansible.com/robertdebock/cron)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-cron.svg)](https://github.com/robertdebock/ansible-role-cron/releases/)|
+|Travis|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-cron.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-cron)|[![github](https://github.com/robertdebock/ansible-role-cron/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-cron/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-cron/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-cron)|[![quality](https://img.shields.io/ansible/quality/39153)](https://galaxy.ansible.com/robertdebock/cron)|[![downloads](https://img.shields.io/ansible/role/d/39153)](https://galaxy.ansible.com/robertdebock/cron)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-cron.svg)](https://github.com/robertdebock/ansible-role-cron/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
