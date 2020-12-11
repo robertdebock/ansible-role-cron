@@ -46,7 +46,7 @@
     state: started
     enabled: yes
   when:
-    - cron_service | length
+    - cron_service is defined
 
 - name: schedule requested cron jobs
   cron:
