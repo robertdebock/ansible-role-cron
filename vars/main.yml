@@ -19,7 +19,7 @@ cron_configuration: "{{ _cron_configuration[ansible_os_family] | default(_cron_c
 
 _cron_service:
   default: crond
-  Alpine: '[]'
+  Alpine: ""
   Debian: cron
   Suse: cron
   Archlinux: cronie
