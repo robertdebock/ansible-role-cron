@@ -47,6 +47,7 @@
     enabled: yes
   when:
     - cron_service is defined
+    - cron_service | length
 
 - name: schedule requested cron jobs
   cron:
