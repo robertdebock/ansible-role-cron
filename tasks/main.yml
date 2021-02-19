@@ -7,12 +7,12 @@
   delegate_to: localhost
 
 - name: install cron
-  package:
+  ansible.builtin.package:
     name: "{{ cron_packages }}"
     state: present
 
 - name: configure shell
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: "{{ cron_configuration }}"
     line: "SHELL={{ cron_shell }}"
     regexp: "^SHELL"
@@ -22,7 +22,7 @@
     - restart cron
 
 - name: configure path
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: "{{ cron_configuration }}"
     line: "PATH={{ cron_path }}"
     regexp: "^PATH"
@@ -32,7 +32,7 @@
     - restart cron
 
 - name: configure mailto
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: "{{ cron_configuration }}"
     line: "MAILTO={{ cron_mailto }}"
     regexp: "^MAILTO"
@@ -42,7 +42,7 @@
     - restart cron
 
 - name: start and enable cron
-  service:
+  ansible.builtin.service:
     name: "{{ cron_service }}"
     state: started
     enabled: yes
@@ -51,7 +51,7 @@
     - cron_service | length
 
 - name: schedule requested cron jobs
-  cron:
+  ansible.builtin.cron:
     name: "{{ item.name }}"
     minute: "{{ item.minute | default(omit) }}"
     hour: "{{ item.hour | default(omit) }}"

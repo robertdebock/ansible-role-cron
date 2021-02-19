@@ -1,28 +1,28 @@
 ---
 
 - name: test if cron_shell is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - cron_shell is defined
       - cron_shell is string
     quiet: yes
 
 - name: test if cron_path is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - cron_path is defined
       - cron_path is string
     quiet: yes
 
 - name: test if cron_mailto is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - cron_mailto is defined
       - cron_mailto is string
     quiet: yes
 
 - name: test if cron_jobs is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - cron_jobs is iterable
     quiet: yes
@@ -30,7 +30,7 @@
     - cron_jobs is defined
 
 - name: test if item in cron_jobs is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - item.name is defined
       - item.name is string
@@ -44,7 +44,7 @@
     - cron_jobs is defined
 
 - name: test if item.minute is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - item.minute >= 0
       - item.minute <= 59
@@ -58,7 +58,7 @@
     - item.minute is number
 
 - name: test if item.hour is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - item.hour >= 0
       - item.hour <= 23
@@ -72,7 +72,7 @@
     - item.hour is number
 
 - name: test if item.weekday is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - item.weekday >= 0
       - item.weekday <= 6
