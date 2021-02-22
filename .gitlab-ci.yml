@@ -20,8 +20,6 @@ molecule:
         tag: "latest"
       - image: "amazonlinux"
         tag: "latest"
-      - image: "archlinux"
-        tag: "latest"
       - image: "centos"
         tag: "7"
       - image: "centos"
