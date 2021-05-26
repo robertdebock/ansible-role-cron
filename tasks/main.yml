@@ -17,7 +17,7 @@
     line: "SHELL={{ cron_shell }}"
     regexp: "^SHELL"
     create: yes
-    mode: "0644"
+    mode: "0600"
   notify:
     - restart cron
 
