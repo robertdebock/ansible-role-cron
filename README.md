@@ -8,16 +8,35 @@ Install cron and scedule jobs on your system.
 
 ## [Example Playbook](#example-playbook)
 
-This example is taken from `molecule/default/converge.yml` and is tested on each push, pull request and release.
+This example is taken from `molecule/default/verify.yml` and is tested on each push, pull request and release.
 ```yaml
 ---
-- name: converge
+- name: Verify
   hosts: all
   become: yes
   gather_facts: yes
 
   roles:
-    - role: robertdebock.cron
+    - role: ansible-role-cron
+      cron_jobs:
+        - name: requested job
+          job: "ls -alh > /dev/null"
+        - name: requested job by the minute
+          minute: "23"
+          job: "ls -alh > /dev/null"
+        - name: requested job by the hour
+          hour: "23"
+          job: "ls -alh > /dev/null"
+        - name: requested job by the weekday
+          weekday: "1"
+          job: "ls -alh > /dev/null"
+        - name: requested job by specific user
+          hour: "23"
+          job: "ls -alh > /dev/null"
+          user: "root"
+        - name: requested job every 5 minutes
+          minute: "*/5"
+          job: "ls -alh > /dev/null"
 ```
 
 The machine needs to be prepared in CI this is done using `molecule/default/prepare.yml`:
