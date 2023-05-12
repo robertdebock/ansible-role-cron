@@ -7,21 +7,21 @@
   roles:
     - role: ansible-role-cron
       cron_jobs:
-        - name: requested job
+        - name: Requested job
           job: "ls -alh > /dev/null"
-        - name: requested job by the minute
+        - name: Requested job by the minute
           minute: "23"
           job: "ls -alh > /dev/null"
-        - name: requested job by the hour
+        - name: Requested job by the hour
           hour: "23"
           job: "ls -alh > /dev/null"
-        - name: requested job by the weekday
+        - name: Requested job by the weekday
           weekday: "1"
           job: "ls -alh > /dev/null"
-        - name: requested job by specific user
+        - name: Requested job by specific user
           hour: "23"
           job: "ls -alh > /dev/null"
           user: "root"
-        - name: requested job every 5 minutes
+        - name: Requested job every 5 minutes
           minute: "*/5"
           job: "ls -alh > /dev/null"
