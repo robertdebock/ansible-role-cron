@@ -5,6 +5,7 @@
     that:
       - cron_shell is defined
       - cron_shell is string
+      - cron_shell is not none
     quiet: yes
 
 - name: assert | Test if cron_path is set correctly
@@ -12,6 +13,7 @@
     that:
       - cron_path is defined
       - cron_path is string
+      - cron_path is not none
     quiet: yes
 
 - name: assert | Test if cron_mailto is set correctly
@@ -19,6 +21,7 @@
     that:
       - cron_mailto is defined
       - cron_mailto is string
+      - cron_mailto is not none
     quiet: yes
 
 - name: assert | Test if cron_jobs is set correctly
@@ -34,8 +37,10 @@
     that:
       - item.name is defined
       - item.name is string
+      - item.name is not none
       - item.job is defined
       - item.job is string
+      - item.job is not none
     quiet: yes
   loop: "{{ cron_jobs }}"
   loop_control:
