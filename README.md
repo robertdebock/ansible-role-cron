@@ -2,9 +2,9 @@
 
 Install cron and scedule jobs on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![github](https://github.com/robertdebock/ansible-role-cron/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-cron/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-cron/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-cron)|[![quality](https://img.shields.io/ansible/quality/39153)](https://galaxy.ansible.com/robertdebock/cron)|[![downloads](https://img.shields.io/ansible/role/d/39153)](https://galaxy.ansible.com/robertdebock/cron)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-cron.svg)](https://github.com/robertdebock/ansible-role-cron/releases/)|
+|GitHub|GitLab|Downloads|Version|
+|------|------|---------|-------|
+|[![github](https://github.com/robertdebock/ansible-role-cron/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-cron/actions)|[![gitlab](https://gitlab.com/robertdebock-iac/ansible-role-cron/badges/master/pipeline.svg)](https://gitlab.com/robertdebock-iac/ansible-role-cron)|[![downloads](https://img.shields.io/ansible/role/d/24468)](https://galaxy.ansible.com/robertdebock/cron)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-cron.svg)](https://github.com/robertdebock/ansible-role-cron/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -105,7 +105,7 @@ The minimum version of Ansible required is 2.12, tests have been done to:
 - The current version.
 - The development version.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-cron/issues)
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-cron/issues).
 
 ## [License](#license)
 
