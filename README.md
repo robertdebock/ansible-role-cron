@@ -1,4 +1,4 @@
-# Ansible role [cron](#cron)
+# [Ansible role cron](#cron)
 
 Install cron and scedule jobs on your system.
 
