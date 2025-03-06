@@ -18,7 +18,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   gather_facts: true
 
   roles:
-    - role: ansible-role-cron
+    - role: robertdebock.cron
       cron_jobs:
         - name: my_job
           # Every 10 minutes
