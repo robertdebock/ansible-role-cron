@@ -3,25 +3,3 @@
   hosts: all
   become: true
   gather_facts: true
-
-  roles:
-    - role: ansible-role-cron
-      cron_jobs:
-        - name: Requested job
-          job: "ls -alh > /dev/null"
-        - name: Requested job by the minute
-          minute: "23"
-          job: "ls -alh > /dev/null"
-        - name: Requested job by the hour
-          hour: "23"
-          job: "ls -alh > /dev/null"
-        - name: Requested job by the weekday
-          weekday: "1"
-          job: "ls -alh > /dev/null"
-        - name: Requested job by specific user
-          hour: "23"
-          job: "ls -alh > /dev/null"
-          user: "root"
-        - name: Requested job every 5 minutes
-          minute: "*/5"
-          job: "ls -alh > /dev/null"
