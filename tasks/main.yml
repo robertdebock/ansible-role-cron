@@ -49,7 +49,7 @@
     enabled: true
   when:
     - cron_service is defined
-    - cron_service | length
+    - cron_service | length > 0
 
 - name: Schedule requested cron jobs
   ansible.builtin.cron:
