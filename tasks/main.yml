@@ -63,6 +63,7 @@
     job: "{{ item.job }}"
     state: "{{ item.state | default('present') }}"
     user: "{{ item.user | default(omit) }}"
+    cron_file: "{{ item.cron_file | default(omit) }}"
   loop: "{{ cron_jobs }}"
   loop_control:
     label: "{{ item.name }}"
